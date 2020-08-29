@@ -42,8 +42,9 @@ class Triangle extends Polygon {
 class Square extends Polygon {
   get isValid() {
     if (
-      ((this.integers[0] === this.integers[1]) === this.integers[2]) ===
-      this.integers[3]
+      this.integers[0] === this.integers[1] &&
+      this.integers[1] === this.integers[2] &&
+      this.integers[2] === this.integers[3]
     ) {
       return true;
     } else {
@@ -52,6 +53,10 @@ class Square extends Polygon {
   }
 
   get area() {
-    return this.integers[0]  * this.integers[0];
+    return this.integers[0] ** 2;
   }
 }
+
+let square2 = new Square([5, 5, 5, 5]);
+
+console.log(square2.isValid);

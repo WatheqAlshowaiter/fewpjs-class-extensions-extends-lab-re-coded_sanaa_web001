@@ -20,10 +20,10 @@ class Polygon {
 class Triangle extends Polygon {
   get isValid() {
     if (
-      this.countSides() === 3 &&
-      this.perimeter() > this.integers[0] &&
-      this.perimeter() > this.integers[1] &&
-      this.perimeter() > this.integers[2]
+      this.countSides === 3 &&
+      this.perimeter > this.integers[0] &&
+      this.perimeter > this.integers[1] &&
+      this.perimeter > this.integers[2]
     ) {
       return true;
     } else {
@@ -32,13 +32,6 @@ class Triangle extends Polygon {
   }
 }
 
-// 3. Define a `Square` class that inherits from `Polygon`.
-// * It will automatically have access to `count` and `perimeter` inherited from `Polygon`.
-// * Use the `get` keyword to make a getter method `isValid` that checks if the given 4 sides
-//  for a square is
-// valid. A square is valid when the lengths of all sides are equal.
-// * Use the `get` keyword to make a getter method `area`
-//  that calculates the area of the square.
 class Square extends Polygon {
   get isValid() {
     if (
@@ -57,6 +50,8 @@ class Square extends Polygon {
   }
 }
 
-let square2 = new Square([5, 5, 5, 5]);
+triangle = new Triangle([5, 5, 5]);
+triangle2 = new Triangle([15, 10, 1]);
 
-console.log(square2.isValid);
+console.log(triangle.isValid);
+console.log(triangle2.isValid);
